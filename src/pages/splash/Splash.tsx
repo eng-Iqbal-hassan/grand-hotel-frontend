@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import Logo from "../assets/svgs/Logo";
-import splash1 from "../assets/images/spalsh-1.jpg";
-import splash2 from "../assets/images/splash-2.jpg"
-import splash3 from "../assets/images/splash-3.jpg"
+import Logo from "../../assets/svgs/Logo";
+import splash1 from "../../assets/images/spalsh-1.jpg";
+import splash2 from "../../assets/images/splash-2.jpg"
+import splash3 from "../../assets/images/splash-3.jpg"
+import { Link } from "react-router-dom";
 
 export default function Splash() {
   const [step, setStep] = useState<number>(0);
@@ -67,7 +68,8 @@ export default function Splash() {
         <div className="min-h-screen w-full bg-cover bg-center bg-no-repeat px-6 py-14 flex flex-col items-center justify-end" style={{backgroundImage:`url(${splash3})`}}>
           <h4 className="text-2xl font-bold tracking-tight text-white text-center max-w-[254px]">Discover Your Dream Hotel, Effortlessly</h4>
           <p className="text-sm font-regular tracking-tight pt-2 pb-8 text-white text-center max-w-[254px]">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-          <button className="h-14 w-full text-lg font-semibold tracking-tight text-white bg-primary rounded-xl">Get Started</button>
+          <Link className="h-14 w-full text-lg font-semibold tracking-tight text-white bg-primary rounded-xl flex items-center justify-center" to="/sign-in">Get Started</Link>
+          <p className="text-lg font-normal text-white tracking-tight mt-6">Don’t have an account? <Link to="/sign-up" className="text-primary">Register</Link></p>
         </div>
       }
     </div>
